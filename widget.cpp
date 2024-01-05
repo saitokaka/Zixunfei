@@ -44,9 +44,10 @@ void Widget::setlistvalue()
     Jisuan jieguo(num1,num2);
     double res_jiben=jieguo.jibenfei(num1)*num3/100;
     double res_jinhejian=jieguo.jinhejiane(num1,num2);
-    QString ouit1,ouit2;
+    QString ouit1,ouit2,ouit3;
     ouit1= "基本费:"+ouit1.setNum(res_jiben,'f',6)+"万元";
     ouit2= "净核减:"+ouit2.setNum(res_jinhejian,'f',6)+"万元";
+    ouit3="根据合同条款按高值计取：";
     ui->textBrowser->setText(init3+"\n"+ouit1+"\n"+ouit2);
 
 }
