@@ -1,5 +1,4 @@
 #include "jisuan.h"
-#include "QString"
 
 const double low100 =0.34/100;
 const double equal_100=100*low100;
@@ -23,11 +22,23 @@ const double low50000 =0.15/100;
 const double equal_50000=equal_10000+40000*low50000;
 QString h50000="10000-50000万元：40000×1.50‰=60万元";
 const double lowmax =0.12/100;
-QString finalresult;
+
 
 
 
 Jisuan::Jisuan(double n1,double n2) {
+    double jd=n1;
+    QString f1,f2;
+    f1=f1.setNum(jd,'f',6);
+    f2=f2.setNum(jibenfei(jd),'f',6)+"万元";
+    if(jd<=100){finalresult="0-100万元："+f1+"×3.4‰="+f2;}
+    if(jd>100&jd<=500){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
+    if(jd>500&jd<=1000 ){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
+    if (jd>1000&jd<=2000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
+    if (jd>2000&jd<=5000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
+    if (jd>5000&jd<=10000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
+    if (jd>10000&jd<=50000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
+    if (jd>50000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
 
 
 
