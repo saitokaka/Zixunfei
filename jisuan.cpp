@@ -29,16 +29,16 @@ const double lowmax =0.12/100;
 Jisuan::Jisuan(double n1,double n2) {
     double jd=n1;
     QString f1,f2;
-    f1=f1.setNum(jd,'f',6);
-    f2=f2.setNum(jibenfei(jd),'f',6)+"万元";
-    if(jd<=100){finalresult="0-100万元："+f1+"×3.4‰="+f2;}
-    if(jd>100&jd<=500){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
-    if(jd>500&jd<=1000 ){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
-    if (jd>1000&jd<=2000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
-    if (jd>2000&jd<=5000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
-    if (jd>5000&jd<=10000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
-    if (jd>10000&jd<=50000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
-    if (jd>50000){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-500,'f',6)+"×3.0‰="+f2;}
+    f1=NULL;
+
+    if(jd<=100){finalresult="0-100万元："+f1.setNum(jd,'f',6)+"×3.4‰="+f2.setNum(jd*low100,'f',6);}
+    if(jd>100&jd<=500){finalresult=h100+"\n"+"100-500万元:"+f1.setNum(jd-100,'f',6)+"×3.0‰="+f2.setNum((jd-100)*low500,'f',6);}
+    if(jd>500&jd<=1000 ){finalresult=h100+"\n"+h500+"\n"+"500-1000万元:"+f1.setNum(jd-500,'f',6)+"×2.6‰="+f2.setNum((jd-500)*low1000,'f',6);}
+    if (jd>1000&jd<=2000){finalresult=h100+"\n"+h500+"\n"+h1000+"\n"+"1000-2000万元:"+f1.setNum(jd-1000,'f',6)+"×2.3‰="+f2.setNum((jd-1000)*low2000,'f',6);}
+    if (jd>2000&jd<=5000){finalresult=h100+"\n"+h500+"\n"+h1000+"\n"+h2000+"\n"+"2000-5000万元:"+f1.setNum(jd-2000,'f',6)+"×2.1‰="+f2.setNum((jd-2000)*low5000,'f',6);}
+    if (jd>5000&jd<=10000){finalresult=h100+"\n"+h500+"\n"+h1000+"\n"+h2000+"\n"+h5000+"\n"+"5000-10000万元:"+f1.setNum(jd-5000,'f',6)+"×1.8‰="+f2.setNum((jd-5000)*low10000,'f',6);}
+    if (jd>10000&jd<=50000){finalresult=h100+"\n"+h500+"\n"+h1000+"\n"+h2000+"\n"+h5000+"\n"+h10000+"\n"+"10000-50000万元:"+f1.setNum(jd-10000,'f',6)+"×1.5‰="+f2.setNum((jd-10000)*low50000,'f',6);}
+    if (jd>50000){finalresult=h100+"\n"+h500+"\n"+h1000+"\n"+h2000+"\n"+h5000+"\n"+h10000+"\n"+h50000+"\n"+"大于50000万元:"+f1.setNum(jd-50000,'f',6)+"×1.2‰="+f2.setNum((jd-50000)*lowmax,'f',6);}
 
 
 
