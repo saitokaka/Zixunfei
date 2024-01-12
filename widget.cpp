@@ -10,6 +10,7 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    setWindowIcon(QIcon(":/image/IMG_4779.jpeg"));
 
     QRegularExpression rx("[0-9\\.-]+$");
     QRegularExpression reg("^([1-9]|[1-9]\\d|100)$");
